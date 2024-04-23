@@ -1,0 +1,79 @@
+
+.nike-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .37em 3em;
+  margin-bottom: 4.3em;
+}
+.nike-nav-left-container{
+  display: flex;
+  align-items: center;
+  margin-right: 220px;
+}
+.nike-nav-left-container img{
+  width: 3.3em;
+}
+.nike-nav-middle-container{
+  display: flex;
+  font-weight: 500;
+  color: rgb(39, 39, 39);
+  height: 100%;
+  margin-bottom: -20px;
+}
+.nike-nav-middle-container div{
+  display: flex;
+  vertical-align: bottom;
+  padding-bottom: 10px;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: solid 2px transparent;
+  white-space: nowrap;
+}
+.nike-nav-middle-container div:hover{
+  border-bottom: solid 2px black;
+  cursor: pointer;
+}
+
+.nike-nav-right-container{
+  display: flex;
+  column-gap: 10px;
+}
+.nike-nav-right-container img{
+  width: 20px;
+  padding: 5px 8px;
+  border-radius: 50%;
+}
+.search-container{
+  display: flex;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px;
+  padding: 2px 0;
+}
+.search-container img{
+  width: 26px;
+}
+.search-container input{
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 3px 0;
+  padding-left: 7px;
+  margin-right: 20px;
+  font-weight: 500;
+  width: 110px;
+  outline:none;
+}
+.bag-container,
+.heart-container{
+  display: flex;
+  align-items: center;
+}
+
+.search-container input::placeholder {
+  font-weight: 500; 
+  color: rgb(187, 184, 184); 
+}

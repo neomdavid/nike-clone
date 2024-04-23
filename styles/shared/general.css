@@ -1,0 +1,13 @@
+body {
+  margin:0;
+  font-family: 'Roboto';  overflow-y: auto;
+
+}
+.nav-left-and-shoes-grid-container{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+p{
+  margin: 0;
+}
+a{}

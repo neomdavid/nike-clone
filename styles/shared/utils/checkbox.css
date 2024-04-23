@@ -1,0 +1,39 @@
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  border: 1px solid #ccc; /* Change border color and size as needed */
+  background-color: #fff; /* Change background color as needed */
+  margin-right: 5px; /* Adjust spacing as needed */
+  position: relative; /* Required for positioning the custom checkmark */
+  border-radius: 4px;
+  cursor:pointer;
+}
+
+/* Style the custom checkmark */
+input[type="checkbox"]::before {
+  content: "\2713"; /* Unicode for checkmark symbol */
+  font-size: 14px; /* Adjust size as needed */
+  color: white; /* Change color of the checkmark */
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0px 4px;
+  transform: translate(-50%, -50%);
+  visibility: hidden; /* Initially hide the checkmark */
+  border-radius: 4px;
+}
+
+/* Define styles for the checkbox when checked */
+input[type="checkbox"]:checked::before {
+  visibility: visible; /* Show the checkmark when checked */
+}
+
+
+
+

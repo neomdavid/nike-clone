@@ -1,0 +1,209 @@
+body{
+  padding-bottom: 100px;
+}
+.shoe-details-grid{
+  display: grid;
+  grid-template-columns: 8.7em 1fr 32em;
+  margin-left: auto; /* Adjust the left space */
+  margin-right: auto; /* Adjust the right space */
+  max-width: 1200px; /* Set a maximum width for the body */
+}
+.shoe-gallery-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  padding-right: 18px;
+  row-gap: 8px;
+}
+.shoe-gallery-container div{
+  display: flex;
+  justify-content: right;
+}
+.shoe-gallery-container img{
+  width: 3.75em;
+  border-radius: 3px;
+}
+
+/*SECOND CONTAINER*/
+.shoe-single-picture-container{
+}
+
+.shoe-single-picture-container{
+  display: flex;
+}
+.shoe-single-picture-container div{
+  display: flex;
+  align-items: top;
+}
+.shoe-single-picture-container img{
+  border-radius: 3px;
+  max-height: 670px;
+}
+
+
+
+/*GRID THIRD SECTION CONTAINER*/
+.materials-size-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 55px;
+  padding-right:50px;
+  padding-left: 35px;
+  max-height: calc(100vh - 60px); /* Adjust height as needed */
+  overflow-y: auto; 
+}
+.sustainable-materials{
+  color: rgb(255, 80, 0);
+  margin-bottom: .3em;
+}
+.materials-size-container .shoe-name{
+  font-size: 1.4em;
+  margin-bottom: .2em;
+}
+.materials-size-container .category{
+  margin-bottom: 1.1em;
+  letter-spacing: 0.5px;
+}
+.materials-size-container .price{
+  margin-bottom: 1.4em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.shoe-variants-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  width: 100%;
+  row-gap:4px ;
+  margin-bottom: 2.5em;
+}
+.shoe-variants-container img {
+  width: 4.4em;
+  border-radius: 3px;
+}
+.size-guide-container{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 450;
+  margin-bottom: .7em;
+}
+.size-guide-container .select-size{
+}
+.size-guide-container .select-guide{
+  color: rgb(112, 112, 114);
+}
+.sizes-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 7px;
+  margin-bottom: 1em;
+}
+.sizes-grid div{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgb(229, 229, 229) 0px 0px 0px 1px;
+  color:rgb(17, 17, 17);
+  padding: 14px 0;
+  font-size: 1em;
+  font-weight: 300;
+}
+.add-to-bag,
+.favourite{
+  display: flex;
+  margin-bottom: .9em;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 0;
+  border-radius: 40px;
+  font-weight: 500;
+
+}
+.add-to-bag{
+  background-color: rgb(17, 17, 17);
+}
+.favourite{
+  box-shadow: 0px 0px 1px 1px rgb(186, 186, 186);
+  color: black;
+  margin-bottom: 1.5em;
+}
+.disclaimer{
+  display: flex;
+  align-items: center;
+  color: rgb(112, 112, 114);
+  text-align: center;
+  padding: 0 34px;
+  line-height: 30px;
+  margin-bottom: 2em;  
+}
+.recycled{
+  background-color: rgb(245, 245, 245);
+  padding: 35px 40px;
+  line-height: 23px;
+  color: rgb(17, 17, 17);
+  margin-bottom: 2.8em;
+}
+.detailed-description{
+  line-height: 30px;
+  margin-bottom: 1.3em;
+}
+.color-style-list-container{
+  padding-left: 12px;
+  margin: 0;
+  line-height: 25px;
+  margin-bottom: 1.5em;
+}
+.view-details{
+  margin-bottom: 2.5em;
+}
+.view-details p{
+  display: inline;
+  border-bottom: solid 1px black;
+  font-weight: 500;
+  padding:0 1px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+.view-details p:hover{
+  color: rgb(129, 129, 129);
+  
+}
+.dropdowns-container{
+  border-top: solid 1px rgb(217, 217, 217);
+  line-height: 25px;
+}
+.dropdown{
+  display: flex;
+  flex-direction: column;
+}
+.dropdowns-container .visible{
+  padding-top: 25px;
+  font-size: 1.2em;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.dropdowns-container .visible img{
+  width: 20px;
+  padding-bottom: 28px;
+}
+.droppable{
+  display: none;
+  flex-direction: column;
+  row-gap: 25px;
+  padding-right: 25px;
+  border-bottom: solid 1px rgb(217, 217, 217);
+  padding-bottom: 25px;
+}
+.droppable ul{
+  padding: 0;
+  padding-left: 20px;
+}
+
+.clicked{
+  display: flex;
+}

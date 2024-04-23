@@ -1,0 +1,113 @@
+.wall-header{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: .8em 3.2em;
+  padding-left: 3em;
+  position: sticky;
+  height: 30px;
+  top: 0;
+}
+.title{
+  font-weight: 500;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+}
+.span-number{
+  letter-spacing: 0;
+}
+.wall-header-right-section{
+  display: flex;
+  column-gap: 2em;
+  color:rgb(17, 17, 17);
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.hide-filters-container,
+.sort-by-container {
+  display: flex;
+  align-items: center;
+}
+.hide-filters-container{
+  column-gap: .4em;
+}
+.sort-by-container{
+  column-gap: .2em;
+}
+
+.hide-filters-container img{
+  width:1.3em;
+}
+.sort-by-container img{
+  width:1.1em;
+}
+
+/*---------FOR WALL NAV LEFT --------*/
+
+
+.title{
+  position: relative;
+  min-width: 210px;
+}
+.wall-nav-left{
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 100px); 
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  row-gap: 15px;
+  padding-right: 25px;
+
+}
+
+.wall-nav-left .category,
+.category-dropdown-container{
+  display: flex;
+  font-size: .67em;
+  padding-left: 7px;
+}
+.category-dropdown-container{
+  flex-direction: column;
+  border-top: solid 1px rgb(214, 213, 213);
+  font-size: .71em;
+  margin-top: 30px;
+  padding-left: 3px;
+}
+.category-dropdown-container img{
+  width: 20px;
+}
+.category-dropdown-container .single-container{
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 1px rgb(214, 213, 213);
+}
+.dropdown-top-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.dropdown-top-container:hover{
+  cursor: pointer;
+}
+.dropdown-bottom-container form{
+  display: flex;
+  flex-direction: column;
+  font-size: .97em;
+  font-weight: 400;
+  padding: 10px 0px;
+}
+.dropdown-bottom-container form div{
+  display: flex;
+  align-items: center;
+  padding: 2px 2px;
+  column-gap: 2px;
+}
+
+.isNotClicked {
+ display: none;
+}

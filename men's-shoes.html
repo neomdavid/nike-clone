@@ -1,0 +1,154 @@
+<!DOCTYPE html">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--ROBOTO FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/shared/top-section/jordan-nav.css">
+    <link rel="stylesheet" href="styles/shared/top-section/nike-nav.css">
+    <link rel="stylesheet" href="styles/pages/wall-header.css">
+    <link rel="stylesheet" href="styles/pages/men's-shoes-grid.css">
+    <link rel="stylesheet" href="styles/shared/utils/checkbox.css">
+  </head>
+
+  <body>
+    <div class="jordan-nav">
+      <div class="jordan-left-nav">
+        <img src="images/nav/jordan.png">
+      </div>
+      <div class="jordan-right-nav">
+        <div>Find a Store</div>
+        <div>Help</div>
+        <div>Join Us</div>
+        <div>Sign In</div>
+      </div>
+    </div>
+    <div class="nike-nav">
+      <div class="nike-nav-left-container">
+        <img src = "images/nav/nike.png" >
+      </div>
+      <div class="nike-nav-middle-container">
+        <div>New  & Featured</div>
+        <div>Men</div>
+        <div>Women</div>
+        <div>Kids</div>
+        <div>Sale</div>
+        <div>Customise</div>
+        <div>SNKRS</div>
+      </div>
+      <div class="nike-nav-right-container">
+        <div class="search-container">
+          <img src="images/nav/search.png">
+          <input class="search-input" placeholder="Search"></input>
+        </div>
+        <div class="heart-container">
+          <img src="images/nav/heart.png">
+        </div>
+        <div class="bag-container">
+          <img src="images/nav/shopping-bag.png">
+        </div>
+      </div>
+    </div>
+    <div class="wall-header">
+      <div class="title">
+        Men's Shoes<span class="span-number"> (1216)</span>
+        <div class="wall-nav-left">
+          <div class="category">Lifestyle</div>
+          <div class="category">Jordan</div>
+          <div class="category">Running</div>
+          <div class="category">Basketball</div>
+          <div class="category">American Football</div>
+          <div class="category">Football</div>
+          <div class="category">Training & Gym</div>
+          <div class="category">Skateboarding</div>
+          <div class="category">Golf</div>
+          <div class="category">Tennis</div>
+          <div class="category">Athletics</div>
+          <div class="category">Walking</div>
+          <div class="category-dropdown-container">
+            <div class="single-container">
+              <div class="dropdown-top-container js-dropdown-top-container">
+                <p>Gender (2)</p>
+                <img src="images/nav/down.png">
+              </div>
+              <div class="dropdown-bottom-container js-dropdown-bottom-container">
+                <form>
+                  <div>
+                    <input type="checkbox" id="men" name="men">
+                    <label for="men">Men</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="women" name="women">
+                    <label for="women">Women</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="single-container">
+              <div class="dropdown-top-container js-dropdown-top-container">
+                <p>Shop By Price</p>
+                <img src="images/nav/down.png">
+              </div>
+              <div class="dropdown-bottom-container js-dropdown-bottom-container">
+                <form>
+                  <div>
+                    <input type="checkbox" id="3000" name="3000">
+                    <label for="3000">Under &#8369;3,000</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="3000-6000" name="3000-6000">
+                    <label for="3000-6000">&#8369;3,000 - &#8369;6,000</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="6001-11199" name="6001-11199">
+                    <label for="6001-11199">&#8369;6,001 - &#8369;6,000</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="12000" name="12000">
+                    <label for="12000">Over &#8369;12,000 </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+           
+
+           
+          </div>
+        </div>
+      </div>
+      <div class="wall-header-right-section">
+        <div class="hide-filters-container">
+          <div>Hide Filters</div>
+          <img src="images/nav/filter.png">
+        </div>
+        <div class="sort-by-container">
+          <div>Sort By</div>
+          <img src="images/nav/down.png">
+        </div>
+      </div>
+ 
+    </div>
+ 
+
+    </div>
+
+    <div class="nav-left-and-shoes-grid-container">
+      <div class="nav-left"></div>
+
+      <div class="menshoes-grid">
+ 
+      </div>
+    </div>
+    
+ 
+
+
+    <script src="scripts/menShoes.js" type="module"></script>
+    <script src="scripts/frontend/wall-header-left.js" type="module"></script>
+  </body>
+</html>

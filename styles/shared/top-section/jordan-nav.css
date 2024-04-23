@@ -1,0 +1,32 @@
+.jordan-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  padding-right: 40px;
+  padding-left: 50px;
+  background-color: rgb(245, 245, 245);
+
+}
+.jordan-left-nav img{
+  width: 1.2em;
+}
+.jordan-right-nav {
+  display: flex;
+  font-size: .7em;
+}
+.jordan-right-nav div{
+  padding: 0 15px;
+  color: rgb(17, 17, 17);
+  font-weight: 500;
+}
+.jordan-right-nav div:hover{
+  color: rgb(145, 145, 145);
+  cursor: pointer;
+}
+.jordan-right-nav > :nth-child(1),
+.jordan-right-nav > :nth-child(2),
+.jordan-right-nav > :nth-child(3)
+ {
+ border-right: solid 1px;
+}

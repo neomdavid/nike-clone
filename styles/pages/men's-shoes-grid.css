@@ -1,0 +1,42 @@
+.menshoes-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2%;
+  column-gap: 1.7%;
+  margin-right: 4.5%;
+}
+.menshoes-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menshoes-container img{
+  width: 100%;
+  margin-bottom: 8px;
+}
+p{
+  margin: 0;
+}
+.just-in-text{
+  color: rgb(158, 53, 0);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.shoe-name, .shoe-price{
+  color:rgb(17, 17, 17);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.shoe-category, .color-quantity{
+  color:rgb(112, 112, 114);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.color-quantity{
+  margin-bottom: 8px;
+}
