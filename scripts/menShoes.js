@@ -1,8 +1,7 @@
 import {shoes} from './data/shoes.js';
-import { variations, updateClickedVariation} from './data/variation.js';
+import { variations, updateClickedVariation, getVariationByShoeId} from './data/variation.js';
 import { formatCurrency } from './utils/formatCurrency.js';
 
- 
 let shoeSummaryHTML = ``;
 
 shoes.forEach((shoe)=>{
@@ -30,15 +29,13 @@ document.querySelectorAll('.js-menshoes-container')
   .forEach((container)=>{
     container.addEventListener('click',()=>{
       const {shoeId} = container.dataset;
-      console.log(shoeId);
-      
+      console.log('id'+shoeId)
 
        let matchedVariation;
-       variations.forEach((variation)=>{
-        if(shoeId == variation.id){
-          matchedVariation = variation;
-        }
-       });
+    
+       matchedVariation = getVariationByShoeId(shoeId);
+       
+       console.log(matchedVariation.id);
        updateClickedVariation(matchedVariation);
       
     })

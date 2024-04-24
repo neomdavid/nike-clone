@@ -1,12 +1,13 @@
-import {getClickedVariation} from "./data/variation.js";
+import {getClickedVariation, clickedVariation} from "./data/variation.js";
 import { getShoeByVariation } from "./data/shoes.js";
 import { formatCurrency } from "./utils/formatCurrency.js";
  
 renderShoeDetails();
 
 export function renderShoeDetails(){
+  console.log(clickedVariation);
   let variation = getClickedVariation();
-
+ 
   let galleryContainerHTML = ``;
 
   variation.images.forEach((imageSrc)=>{

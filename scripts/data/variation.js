@@ -54,29 +54,43 @@ export let variations = [{
   styleCode: 'FN5832-100'
 }];
 
-export let variationCount = 0;
-let clickedVariation;
-function saveToStorage() {
-  localStorage.setItem('variations', JSON.stringify(variations));
-  localStorage.setItem('clickedVariation', JSON.stringify(clickedVariation));
-}
+export let clickedVariation = 'hret';
 
 loadFromStorage();
+
+if(!clickedVariation){
+  console.log('no clicked variation')
+}
 
 function loadFromStorage() {
   clickedVariation = JSON.parse(localStorage.getItem('clickedVariation'));
 }
 
+function saveToStorage() {
+  localStorage.setItem('clickedVariation', JSON.stringify(clickedVariation));
+}
+
 export function updateClickedVariation(variation) {
   clickedVariation = variation;
+  console.log(clickedVariation);
   saveToStorage();
 }
 
 export function getClickedVariation() {
+  loadFromStorage();
+
   let variation;
-  if (!clickedVariation) {
-    clickedVariation = variations[0];
-  }
   variation = clickedVariation;
+  console.log(variation.id);
   return variation;
+}
+
+export function getVariationByShoeId(shoeId){
+  let matchedVariation;
+       variations.forEach((variation)=>{
+        if(shoeId == variation.id){
+          matchedVariation = variation;
+        }
+       })
+  return matchedVariation;
 }
