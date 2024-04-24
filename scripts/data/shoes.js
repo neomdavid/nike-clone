@@ -55,3 +55,14 @@ export const shoes = [{
   colorQuantity: 1,
   priceCents: 93950
 }];
+
+export function getShoeByVariation(variation){
+  let matchedShoe;
+
+  shoes.forEach((shoe)=>{
+    if(shoe.id === variation.id){
+      matchedShoe = shoe;
+    }
+  });
+  return matchedShoe;
+}
