@@ -80,6 +80,11 @@ body{
 .shoe-variants-container img {
   width: 4.4em;
   border-radius: 3px;
+  border: solid 1px transparent;
+}
+.shoe-variants-container img:hover{
+  cursor: pointer;
+  border: solid 1px black;
 }
 .size-guide-container{
   display: flex;
@@ -87,8 +92,7 @@ body{
   font-weight: 450;
   margin-bottom: .7em;
 }
-.size-guide-container .select-size{
-}
+
 .size-guide-container .select-guide{
   color: rgb(112, 112, 114);
 }
