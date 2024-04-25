@@ -109,6 +109,12 @@ body{
   padding: 14px 0;
   font-size: 1em;
   font-weight: 300;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.sizes-grid div:hover{
+  border: solid 1px black;
+  box-shadow: none;
 }
 .add-to-bag,
 .favourite{
@@ -124,11 +130,21 @@ body{
 }
 .add-to-bag{
   background-color: rgb(17, 17, 17);
+  cursor: pointer;
+}
+.add-to-bag:hover{
+  background-color: rgb(116, 116, 116);
 }
 .favourite{
   box-shadow: 0px 0px 1px 1px rgb(186, 186, 186);
   color: black;
   margin-bottom: 1.5em;
+  cursor: pointer;
+  border: solid 1.5px transparent;
+}
+.favourite:hover{
+  border: solid 1.5px black;
+  box-shadow: none;
 }
 .disclaimer{
   display: flex;
@@ -186,6 +202,7 @@ body{
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  border-bottom: solid 1px rgb(217, 217, 217);
 }
 .dropdowns-container .visible img{
   width: 20px;

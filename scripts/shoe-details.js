@@ -1,16 +1,20 @@
-import {getClickedVariation, clickedVariation} from "./data/variation.js";
+import {getClickedVariation, clickedVariation, variations, getDefaultVariation, getVariationByVariationId} from "./data/variation.js";
 import { getShoeByVariation } from "./data/shoes.js";
 import { formatCurrency } from "./utils/formatCurrency.js";
- 
+
+let variation = getClickedVariation();
+let defaultVariation = getDefaultVariation(variation);
+
 renderShoeDetails();
 
 export function renderShoeDetails(){
-  console.log(clickedVariation);
-  let variation = getClickedVariation();
+  console.log(defaultVariation)
+
+  console.log(shoeVariantsContainerHTML(variation));
  
   let galleryContainerHTML = ``;
 
-  variation.images.forEach((imageSrc)=>{
+  defaultVariation.images.forEach((imageSrc)=>{
     galleryContainerHTML+= `
     <div><img src="${imageSrc}"></div>
     `
@@ -21,7 +25,7 @@ export function renderShoeDetails(){
 
   document.querySelector('.js-shoe-single-picture-container')
     .innerHTML = `
-    <img src="${variation.singleImage}">
+    <img src="${defaultVariation.singleImage}">
     `;
 
     let matchedShoe = getShoeByVariation(variation);
@@ -34,20 +38,14 @@ export function renderShoeDetails(){
       <p class="category">Shoes</p>
       <p class="price">&#8369;${formatCurrency(matchedShoe.priceCents)} </p>
       <div class="shoe-variants-container">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
-        <img src="images/men-shoe/men-shoe-1.png">
+       ${shoeVariantsContainerHTML(variation)}
       </div>
       <div class="size-guide-container">
         <div class="select-size">Select Size</div>
         <div class="select-guide">Size Guide</div>
       </div>
       <div class="sizes-grid js-sizes-grid">
-        ${sizesContainerHTML(variation)};
+        ${sizesContainerHTML(variation)}
       </div>
       <div class="add-to-bag">Add to Bag</div>
       <div class="favourite">Favourite</div>
@@ -56,7 +54,7 @@ export function renderShoeDetails(){
       <div class="detailed-description">Fast forward. Rewind. Doesn't matter—this shoe takes retro into the future. The V2K remasters everything you love about the Vomero in a look pulled straight from an early '00s running catalogue. Layer up in a mixture of flashy metallics, referential plastic details and a midsole with a perfectly vintage aesthetic. And the chunky heel makes sure wherever you go, it's in comfort.</div>
       <ul class="color-style-list-container">
         <li>Colour Shown: White/Photon Dust/Summit White/Platinum Tint</li>
-        <li>Style: ${variation.styleCode}</li>
+        <li>Style: ${defaultVariation.styleCode}</li>
       </ul>
       <div class="view-details">
         <p>View Product Details</p>
@@ -68,7 +66,8 @@ export function renderShoeDetails(){
             <img src="images/nav/down.png">
           </div>
           <div class="droppable">
-            <div>Your order of ₱7,500 or more gets free standard delivery.</div>
+            <div>Your order of ₱7,500 or more gets free standard delivery.
+            </div>
           <ul>
             <li>Standard delivered 5-9 Business Days
             </li>
@@ -110,12 +109,25 @@ export function renderShoeDetails(){
           </div> 
         </div>
       </div>
+      
 
    
   `
 
   document.querySelector('.js-materials-size-container')
     .innerHTML = materialSizeContainerHTML;
+
+  document.querySelectorAll('.js-variation-image').forEach((variationImage)=>{
+    variationImage.addEventListener('click',()=>{
+        
+      const {variationId} = variationImage.dataset;
+      let newVariation;
+      newVariation = getVariationByVariationId(variationId);
+      updateShoeVariation(newVariation);
+    })
+  })
+
+  console.log('variationId is now='+defaultVariation);
 
 };
 
@@ -130,7 +142,27 @@ function sizesContainerHTML(variation){
   return sizesContainerHTML;
 };
 
+function shoeVariantsContainerHTML(variation){
 
+  let filteredVariation = variations.filter((variationItem)=>{
+    return variationItem.variationId.startsWith(variation.id + '-');
+  });
+
+  let shoeVariantsContainerHTML = ``;
+  filteredVariation.forEach((variation)=>{
+    shoeVariantsContainerHTML+=`
+      <img src="${variation.squareImage}" class="js-variation-image" data-variation-id="${variation.variationId}">
+    `
+  })
+  
+
+  return shoeVariantsContainerHTML;
+};
+
+function updateShoeVariation(variation){
+  defaultVariation = variation;
+  renderShoeDetails();
+};
 
 
 

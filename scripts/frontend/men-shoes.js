@@ -1,7 +1,9 @@
-
+console.log('droppable')
 document.querySelectorAll('.dropdowns-container .visible').forEach((visible) => {
+    visible.click();
     visible.addEventListener('click', () => {
-        const droppable = visible.nextElementSibling;
+        console.log('clicked')
+        const droppable = visible.nextEle2mentSibling;
         const img = visible.querySelector('img');
         if (droppable.classList.contains('clicked')) {
             droppable.classList.remove('clicked');
