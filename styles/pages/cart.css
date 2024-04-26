@@ -1,0 +1,62 @@
+
+.cart-grid{
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  max-width: 65em;
+  margin: 0 auto; 
+
+}
+.bag-items-container{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+.summary-container{
+  background-color: blue;
+}
+.bag-title{
+  font-size: 1.45em;
+  letter-spacing: .1px;
+}
+.item-container{
+  display: grid;
+  grid-template-columns:  9.5em 15em 1fr;
+  column-gap: 15px;
+}
+.item-container img{
+  width: 9.5em;
+}
+.item-details-container{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap:6px;
+}
+.size-quantity-container{
+  display: flex;
+  margin-bottom: 1.3em;
+}
+.size-container, 
+.price-container,
+.icons-container{
+  display: flex;
+}
+.icons-container img{
+  width: 1.1em;
+}
+.shoe-name{
+  font-weight: 500;
+}
+.category,
+.colorway,
+.size-quantity-container{
+  font-weight: 400;
+  color:rgb(112, 112, 114);
+  letter-spacing: .2px;
+}
+select {
+  appearance: none; 
+  border: none; 
+ 
+}
+/*we gonna club!!*/

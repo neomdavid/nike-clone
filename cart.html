@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--ROBOTO FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link href="styles/shared/general.css" rel="stylesheet">
+    <link href="styles/shared/top-section/jordan-nav.css" rel="stylesheet">
+    <link href="styles/shared/top-section/nike-nav.css" rel="stylesheet">
+    <link href="styles/pages/cart.css" rel="stylesheet">
+    <title>Cart</title>
+  </head>
+ <body>
+
+  <div class="jordan-nav">
+    <div class="jordan-left-nav">
+      <img src="images/nav/jordan.png">
+    </div>
+    <div class="jordan-right-nav">
+      <div>Find a Store</div>
+      <div>Help</div>
+      <div>Join Us</div>
+      <div>Sign In</div>
+    </div>
+  </div>
+  <div class="nike-nav">
+    <div class="nike-nav-left-container">
+      <img src = "images/nav/nike.png" >
+    </div>
+    <div class="nike-nav-middle-container">
+      <div>New  & Featured</div>
+      <div>Men</div>
+      <div>Women</div>
+      <div>Kids</div>
+      <div>Sale</div>
+      <div>Customise</div>
+      <div>SNKRS</div>
+    </div>
+    <div class="nike-nav-right-container">
+      <div class="search-container">
+        <img src="images/nav/search.png">
+        <input class="search-input" placeholder="Search"></input>
+      </div>
+      <div class="heart-container">
+        <img src="images/nav/heart.png">
+      </div>
+      <div class="bag-container">
+        <img src="images/nav/shopping-bag.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-grid">
+    <div class="bag-items-container">
+      <div class="bag-title">Bag</div>
+      <div class="item-container">
+        <div><img src="images/men-shoe/men-shoe-1.png"></div>
+        <div class="item-details-container">
+          <div class="shoe-name">Nike Air Force 1 '07 LV8</div>
+          <div class="category">Men's Shoes</div>
+          <div class="colorway">Sail/Coconut Milk/White/Khaki</div>
+          <div class="size-quantity-container">
+            <div class="size-container">
+              <div>Size</div>
+              <form>
+                <select name="size" id="size">
+                  <option value="10.5">10.5</option>    
+                  <option value="10">10</option>  
+                  <option value="95">9.5</option>  
+                </select>
+              </form>
+            </div>
+            <div class="price-container">
+              <div>Price</div>
+              <form>
+                <select name="quantity" id="quantity">
+                  <option value="1">1</option>    
+                  <option value="2">2</option>  
+                  <option value="3">3</option>  
+                </select>
+              </form>
+            </div>
+          </div>
+          <div class="icons-container">
+            <img src="images/nav/heart.png">
+            <img src="images/nav/heart.png">
+          </div>
+        </div>
+        <div>Price</div>
+      </div>
+    </div>
+    <div class="summary-container">summary</div>
+  </div>
+  
+ </body>
+
+</html>

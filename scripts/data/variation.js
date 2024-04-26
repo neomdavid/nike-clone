@@ -14,17 +14,15 @@
     ],
     images: [
       '../../images/men-shoe/men-shoe-1.png',
-      '../../images/men-shoe/variations/men-shoe-1/hello/2.png',
-      '../../images/men-shoe/variations/men-shoe-1/hello/3.png',
-      '../../images/men-shoe/variations/men-shoe-1/hello/4.png',
+      '../../images/men-shoe/variations/men-shoe-1/1-1/2.jpeg',
+      '../../images/men-shoe/variations/men-shoe-1/1-1/3.png',
+      '../../images/men-shoe/variations/men-shoe-1/1-1/4.png',
       '../../images/men-shoe/variations/men-shoe-1/1-1/5.png',
-      '../../images/men-shoe/variations/men-shoe-1/6.png',
-      '../../images/men-shoe/variations/men-shoe-1/7.png',
-      '../../images/men-shoe/variations/men-shoe-1/8.png',
-      '../../images/men-shoe/variations/men-shoe-1/9.png'
+      '../../images/men-shoe/variations/men-shoe-1/1-1/6.png',
+      '../../images/men-shoe/variations/men-shoe-1/1-1/7.png'
     ],
-    singleImage:'../../images/men-shoe/variations/men-shoe-1/shoe-details-main.png',
-    styleCode: 'FN5832-100',
+    singleImage:'../../images/men-shoe/variations/men-shoe-1/1-1/shoe-details-main.png',
+    styleCode: 'FN5832-101',
     squareImage: '../../images/men-shoe/variations/men-shoe-1/1-1/square-image.png'
   }, {
     id: '1',
