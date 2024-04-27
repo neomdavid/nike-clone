@@ -117,7 +117,7 @@
     console.log('no clicked variation')
   }
 
-  function loadFromStorage() {
+  export function loadFromStorage() {
     clickedVariation = JSON.parse(localStorage.getItem('clickedVariation'));
   }
 
