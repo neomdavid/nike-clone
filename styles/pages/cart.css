@@ -4,45 +4,60 @@
   grid-template-columns: 1fr 400px;
   max-width: 65em;
   margin: 0 auto; 
-
+  column-gap: 20px;
 }
+
+/*----------FIRST CONTAINER---------*/
 .bag-items-container{
-  background-color: red;
   display: flex;
   flex-direction: column;
 }
 .summary-container{
-  background-color: blue;
 }
 .bag-title{
-  font-size: 1.45em;
-  letter-spacing: .1px;
+  font-size: 1.55em;
+  letter-spacing: .2px;
 }
 .item-container{
   display: grid;
   grid-template-columns:  9.5em 15em 1fr;
-  column-gap: 15px;
+  column-gap: 25px;
+  letter-spacing: .4px;
+  padding-bottom: 35px;
+  padding-top: 25px;
+  border-bottom: solid 1px rgb(216, 216, 216);
 }
 .item-container img{
-  width: 9.5em;
+  width: 10em;
 }
 .item-details-container{
   background-color: white;
   display: flex;
   flex-direction: column;
-  row-gap:6px;
+  row-gap:10px;
 }
 .size-quantity-container{
   display: flex;
   margin-bottom: 1.3em;
+  column-gap: 10px;
 }
 .size-container, 
-.price-container,
+.quantity-container,
 .icons-container{
   display: flex;
+  letter-spacing: .4px;
+  align-items: center;
+}
+.size-container, 
+.quantity-container{
+  column-gap: 10px;
+}
+.icons-container{
+  display: flex;
+  column-gap: 15px;
 }
 .icons-container img{
-  width: 1.1em;
+  width: 1.3em;
 }
 .shoe-name{
   font-weight: 500;
@@ -52,11 +67,23 @@
 .size-quantity-container{
   font-weight: 400;
   color:rgb(112, 112, 114);
-  letter-spacing: .2px;
+  letter-spacing: .4px;
 }
 select {
+  /* Hide the default arrow */
   appearance: none; 
+  -webkit-appearance: none; /* For older versions of webkit-based browsers */
+  -moz-appearance: none; /* For older versions of Firefox */
+  background: url('../../images/nav/down.png') no-repeat right center; /* Replace 'path_to_your_arrow_image.png' with the path to your custom arrow image */
+  background-size: 18px; /* Adjust the size of the arrow image */
   border: none; 
- 
+  font-size: .8.3em;
+  color: inherit;
+  padding-right: 30px; 
 }
-/*we gonna club!!*/
+.price-container{
+  display: flex;
+  justify-content: right;
+  padding-right: 15px;
+  font-weight: 500;
+}
