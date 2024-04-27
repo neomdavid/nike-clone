@@ -1,10 +1,10 @@
 
 .cart-grid{
   display: grid;
-  grid-template-columns: 1fr 400px;
-  max-width: 65em;
+  grid-template-columns: 1fr 350px;
+  max-width: 67em;
   margin: 0 auto; 
-  column-gap: 20px;
+  column-gap: 30px;
 }
 
 /*----------FIRST CONTAINER---------*/
@@ -84,6 +84,56 @@ select {
 .price-container{
   display: flex;
   justify-content: right;
-  padding-right: 15px;
+  padding-right: 5px;
   font-weight: 500;
 }
+
+
+
+/*-------SECOND CONTAINER-----*/
+.summary-container{
+  display: flex;
+  flex-direction: column;
+}
+.summary-title{
+  font-size: 1.50em;
+  letter-spacing: .2px;
+  padding-bottom: 30px;
+}
+.subtotal-container,
+.delivery-container,
+.total-container{
+  display: flex;
+  justify-content: space-between;
+  color: rgb(57, 57, 57);
+  letter-spacing: .4px;
+  padding-bottom: 15px;
+}
+.delivery-container{
+  border-bottom: solid 1px rgb(208, 208, 208);
+  padding-bottom: 25px;
+}
+.total-container{
+  padding: 20px 0;
+  border-bottom: solid 1px rgb(208, 208, 208);
+  margin-bottom: 25px;
+}
+.total-price{
+  color: black;
+}
+.checkout-button{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  padding: 20px 20px;
+  margin: 5px 0;
+  border-radius: 50px;
+  color: white;
+  letter-spacing: .7px;
+  transition: background-color .3s;
+}
+.checkout-button:hover{
+  background-color: rgba(0, 0, 0, 0.733);
+  cursor: pointer;
+}
+
