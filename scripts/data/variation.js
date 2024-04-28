@@ -109,7 +109,7 @@
     styleCode: 'FN5832-100'
   }];
 
-  export let clickedVariation = 'hret';
+  export let clickedVariation = '';
 
   loadFromStorage();
 
