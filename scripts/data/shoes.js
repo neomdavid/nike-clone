@@ -66,3 +66,13 @@ export function getShoeByVariation(variation){
   });
   return matchedShoe;
 }
+export function getShoeByVariationId(variationId){
+  let matchedShoe;
+
+  shoes.forEach((shoe)=>{
+    if(shoe.id === variationId){
+      matchedShoe = shoe;
+    }
+  });
+  return matchedShoe;
+}
