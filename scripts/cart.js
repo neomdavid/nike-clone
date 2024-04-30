@@ -2,12 +2,15 @@ import { cart } from "./data/cart.js";
 import {getShoeByVariationId, shoes} from "./data/shoes.js";
 import {getVariationByShoeId} from "./data/variation.js"
 
+console.log(cart);
 
 let cartHTML = ``;
 cart.forEach((cartItem)=>{
+  console.log('variationId'+cartItem.variationId)
   const shoe = getShoeByVariationId(cartItem.variationId);
   console.log(cartItem.variationId);
   const variation = getVariationByShoeId(shoe.id);
+  console.log(shoe);
  
   cartHTML+=`
     <div class="item-container">

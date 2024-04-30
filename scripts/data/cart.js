@@ -17,19 +17,31 @@ if (!cart){
 }
 
 
-export function addToCart(variationId, size){
-  const newItem = {
-    cartId: (cart.length === 0 ? '1' : cart.length+1).toString(),
-    quantity:1,
-    size,
-    variationId
-  };
+export function addToCart(variationId, size) {
+  let itemFound = false;
 
-  cart.push(newItem);
+  cart.forEach((cartItem) => {
+    if (cartItem.variationId === variationId) {
+      if(cartItem.size === size ){
+        cartItem.quantity++;
+        itemFound = true;
+      }
+    }
+  });
+
+  if (!itemFound) {
+    const newItem = {
+      cartId: (cart.length === 0 ? '1' : cart.length + 1).toString(),
+      quantity: 1,
+      size,
+      variationId
+    };
+    cart.push(newItem);
+  }
 
   saveToStorage();
-
 }
+
 
 function saveToStorage(){
   localStorage.setItem('cart', JSON.stringify(cart));

@@ -29,6 +29,7 @@ document.querySelectorAll('.js-menshoes-container')
   .forEach((container)=>{
     container.addEventListener('click',()=>{
       const {shoeId} = container.dataset;
+      console.log('id'+shoeId)
 
        let matchedVariation;
     

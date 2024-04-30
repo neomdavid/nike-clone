@@ -6,7 +6,6 @@ import { addToCart, cart} from "./data/cart.js";
 let variation = getClickedVariation();
 let defaultVariation = getDefaultVariation(variation);
 let clickedSize;
-console.log(clickedSize);
 
 renderShoeDetails();
 
@@ -188,7 +187,7 @@ document.querySelector('.js-add-to-bag').addEventListener('click', (buttonElemen
     document.querySelector('.js-sizes-grid').style.border='solid 1px red';
     document.querySelector('.js-select-size').style.color='red';
   } else{
-    addToCart(defaultVariation, clickedSize);
+    addToCart(defaultVariation.id, clickedSize);
 
     console.log(cart);
   }
