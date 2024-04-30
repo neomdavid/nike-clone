@@ -1,17 +1,16 @@
-import {getClickedVariation, clickedVariation, variations, getDefaultVariation, getVariationByVariationId} from "./data/variation.js";
+import {getClickedVariation, variations, getDefaultVariation, getVariationByVariationId} from "./data/variation.js";
 import { getShoeByVariation } from "./data/shoes.js";
 import { formatCurrency } from "./utils/formatCurrency.js";
+import { addToCart, cart} from "./data/cart.js";
 
 let variation = getClickedVariation();
 let defaultVariation = getDefaultVariation(variation);
+let clickedSize;
+console.log(clickedSize);
 
 renderShoeDetails();
 
 export function renderShoeDetails(){
-  console.log(defaultVariation)
-
-  console.log(shoeVariantsContainerHTML(variation));
- 
   let galleryContainerHTML = ``;
 
   defaultVariation.images.forEach((imageSrc)=>{
@@ -41,13 +40,13 @@ export function renderShoeDetails(){
        ${shoeVariantsContainerHTML(variation)}
       </div>
       <div class="size-guide-container">
-        <div class="select-size">Select Size</div>
+        <div class="select-size js-select-size">Select Size</div>
         <div class="select-guide">Size Guide</div>
       </div>
       <div class="sizes-grid js-sizes-grid">
         ${sizesContainerHTML(variation)}
       </div>
-      <div class="add-to-bag">Add to Bag</div>
+      <div class="add-to-bag js-add-to-bag">Add to Bag</div>
       <div class="favourite">Favourite</div>
       <div class="disclaimer">This product is excluded from site promotions and discounts.</div>
       <div class="recycled">This product is made with at least 20% recycled content by weight.</div>
@@ -127,15 +126,13 @@ export function renderShoeDetails(){
     })
   })
 
-  console.log('variationId is now='+defaultVariation);
-
 };
 
 function sizesContainerHTML(variation){
   let sizesContainerHTML = ``;
   variation.sizes.forEach((object)=>{
     sizesContainerHTML+= `
-    <div>US W ${object.womenSize} / M ${object.menSize}</div>
+    <div class="js-size-container" data-size="${object.menSize}">US W ${object.womenSize} / M ${object.menSize}</div>
     `
   });
 
@@ -159,11 +156,41 @@ function shoeVariantsContainerHTML(variation){
   return shoeVariantsContainerHTML;
 };
 
+
 function updateShoeVariation(variation){
   defaultVariation = variation;
   renderShoeDetails();
 };
 
 
+document.querySelectorAll('.js-size-container').forEach((sizeContainer)=>{
+  const menSize =  sizeContainer.dataset.size;
+  sizeContainer.addEventListener('click',()=>{
+    clickedSize = menSize;
 
+    if(clickedSize){
+      document.querySelector('.js-sizes-grid').style.border='none';
+      document.querySelector('.js-select-size').style.color='black';
+    }
+    document.querySelectorAll('.js-size-container').forEach((container)=>{
+      container.style.border = 'solid 1px transparent';
+    })
+    
+    sizeContainer.style.border='solid 1px black';
 
+    console.log(menSize);
+  })
+});
+
+document.querySelector('.js-add-to-bag').addEventListener('click', (buttonElement)=>{
+
+  if(!clickedSize){
+    document.querySelector('.js-sizes-grid').style.border='solid 1px red';
+    document.querySelector('.js-select-size').style.color='red';
+  } else{
+    addToCart(defaultVariation, clickedSize);
+
+    console.log(cart);
+  }
+
+})
