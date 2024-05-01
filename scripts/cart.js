@@ -1,4 +1,4 @@
-import { cart } from "./data/cart.js";
+import { cart, removeFromCart } from "./data/cart.js";
 import {getShoeByVariationId} from "./data/shoes.js";
 import { getVariationByVariationId} from "./data/variation.js"
 
@@ -50,7 +50,7 @@ function renderCartSummary(){
         </div>
         <div class="icons-container">
           <img src="images/nav/heart.png">
-          <img src="images/nav/delete.png">
+          <img src="images/nav/delete.png" class="js-delete-icon" data-cart-id="${cartItem.cartId}">
         </div>
       </div>
       <div class="price-container">
@@ -63,6 +63,16 @@ function renderCartSummary(){
 document.querySelector('.js-bag-items-container')
   .innerHTML=' <div class="bag-title">Bag</div>'+cartHTML;
 
+document.querySelectorAll('.js-delete-icon').forEach((deleteElement)=>{
+  const cartId = deleteElement.dataset.cartId;
+
+  deleteElement.addEventListener('click',()=>{
+    removeFromCart(cartId);
+    renderCartSummary();
+  })
+
+});
+
 function sizesHTML(variation){
   let sizesHTML = ``;
   variation.sizes.forEach((size)=>{
@@ -73,5 +83,6 @@ function sizesHTML(variation){
   return sizesHTML;
 }
 };
+
 
 renderCartSummary();

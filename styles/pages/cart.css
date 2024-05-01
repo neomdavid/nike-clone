@@ -58,6 +58,7 @@
 }
 .icons-container img{
   width: 1.3em;
+  cursor: pointer;
 }
 .shoe-name{
   font-weight: 500;

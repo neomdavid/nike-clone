@@ -42,7 +42,18 @@ export function addToCart(variationId, size) {
   saveToStorage();
 }
 
+export function removeFromCart(cartId){
+  console.log('current'+cart);
 
+  const updatedCart = cart.filter((cartItem)=>{
+   return cartItem.cartId !== cartId;
+  })
+
+  cart = updatedCart;
+  console.log('current'+updatedCart);
+
+  saveToStorage();
+}
 function saveToStorage(){
   localStorage.setItem('cart', JSON.stringify(cart));
 };
