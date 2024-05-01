@@ -6,11 +6,13 @@ import { addToCart, cart} from "./data/cart.js";
 let variation = getClickedVariation();
 let defaultVariation = getDefaultVariation(variation);
 let clickedSize;
+let newVariation = defaultVariation;
 
 renderShoeDetails();
 
 export function renderShoeDetails(){
   let galleryContainerHTML = ``;
+  console.log('variationId: '+newVariation.variationId);
 
   defaultVariation.images.forEach((imageSrc)=>{
     galleryContainerHTML+= `
@@ -119,77 +121,79 @@ export function renderShoeDetails(){
     variationImage.addEventListener('click',()=>{
         
       const {variationId} = variationImage.dataset;
-      let newVariation;
       newVariation = getVariationByVariationId(variationId);
       updateShoeVariation(newVariation);
+      console.log(newVariation);
+
     })
   })
 
-};
-
-function sizesContainerHTML(variation){
-  let sizesContainerHTML = ``;
-  variation.sizes.forEach((object)=>{
-    sizesContainerHTML+= `
-    <div class="js-size-container" data-size="${object.menSize}">US W ${object.womenSize} / M ${object.menSize}</div>
-    `
-  });
-
-  return sizesContainerHTML;
-};
-
-function shoeVariantsContainerHTML(variation){
-
-  let filteredVariation = variations.filter((variationItem)=>{
-    return variationItem.variationId.startsWith(variation.id + '-');
-  });
-
-  let shoeVariantsContainerHTML = ``;
-  filteredVariation.forEach((variation)=>{
-    shoeVariantsContainerHTML+=`
-      <img src="${variation.squareImage}" class="js-variation-image" data-variation-id="${variation.variationId}">
-    `
-  })
+  function sizesContainerHTML(variation){
+    let sizesContainerHTML = ``;
+    variation.sizes.forEach((object)=>{
+      sizesContainerHTML+= `
+      <div class="js-size-container" data-size="${object.menSize}">US W ${object.womenSize} / M ${object.menSize}</div>
+      `
+    });
   
-
-  return shoeVariantsContainerHTML;
-};
-
-
-function updateShoeVariation(variation){
-  defaultVariation = variation;
-  renderShoeDetails();
-};
-
-
-document.querySelectorAll('.js-size-container').forEach((sizeContainer)=>{
-  const menSize =  sizeContainer.dataset.size;
-  sizeContainer.addEventListener('click',()=>{
-    clickedSize = menSize;
-
-    if(clickedSize){
-      document.querySelector('.js-sizes-grid').style.border='none';
-      document.querySelector('.js-select-size').style.color='black';
-    }
-    document.querySelectorAll('.js-size-container').forEach((container)=>{
-      container.style.border = 'solid 1px transparent';
+    return sizesContainerHTML;
+  };
+  
+  function shoeVariantsContainerHTML(variation){
+  
+    let filteredVariation = variations.filter((variationItem)=>{
+      return variationItem.variationId.startsWith(variation.id + '-');
+    });
+  
+    let shoeVariantsContainerHTML = ``;
+    filteredVariation.forEach((variation)=>{
+      shoeVariantsContainerHTML+=`
+        <img src="${variation.squareImage}" class="js-variation-image" data-variation-id="${variation.variationId}">
+      `
     })
     
-    sizeContainer.style.border='solid 1px black';
-
-    console.log(menSize);
+  
+    return shoeVariantsContainerHTML;
+  };
+  
+  
+  function updateShoeVariation(variation){
+    defaultVariation = variation;
+    renderShoeDetails();
+  };
+  
+  
+  document.querySelectorAll('.js-size-container').forEach((sizeContainer)=>{
+    const menSize =  sizeContainer.dataset.size;
+    sizeContainer.addEventListener('click',()=>{
+      clickedSize = menSize;
+  
+      if(clickedSize){
+        document.querySelector('.js-sizes-grid').style.border='none';
+        document.querySelector('.js-select-size').style.color='black';
+      }
+      document.querySelectorAll('.js-size-container').forEach((container)=>{
+        container.style.border = 'solid 1px transparent';
+      })
+      
+      sizeContainer.style.border='solid 1px black';
+  
+      console.log(menSize);
+    })
+  });
+  
+  document.querySelector('.js-add-to-bag').addEventListener('click', (buttonElement)=>{
+  
+    if(!clickedSize){
+      document.querySelector('.js-sizes-grid').style.border='solid 1px red';
+      document.querySelector('.js-select-size').style.color='red';
+    } else{
+      console.log('add'+newVariation.variationId)
+      addToCart(newVariation.variationId, clickedSize);
+  
+      console.log(cart);
+    }
+  
   })
-});
+};
 
-document.querySelector('.js-add-to-bag').addEventListener('click', (buttonElement)=>{
-
-  if(!clickedSize){
-    document.querySelector('.js-sizes-grid').style.border='solid 1px red';
-    document.querySelector('.js-select-size').style.color='red';
-  } else{
-    addToCart(defaultVariation.id, clickedSize);
-
-    console.log(cart);
-  }
-
-})

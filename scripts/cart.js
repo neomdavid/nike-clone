@@ -1,17 +1,20 @@
 import { cart } from "./data/cart.js";
-import {getShoeByVariationId, shoes} from "./data/shoes.js";
-import {getVariationByShoeId} from "./data/variation.js"
+import {getShoeByVariationId} from "./data/shoes.js";
+import { getVariationByVariationId} from "./data/variation.js"
 
 console.log(cart);
+function renderCartSummary(){
+  let cartHTML = ``;
+  cart.forEach((cartItem)=>{
 
-let cartHTML = ``;
-cart.forEach((cartItem)=>{
-  console.log('variationId'+cartItem.variationId)
   const shoe = getShoeByVariationId(cartItem.variationId);
+  
+  const variation = getVariationByVariationId(cartItem.variationId);
+
+  console.log(variation);
   console.log(cartItem.variationId);
-  const variation = getVariationByShoeId(shoe.id);
-  console.log(shoe);
- 
+
+    console.log(shoe);
   cartHTML+=`
     <div class="item-container">
       <div><img src="${variation.squareImage}"></div>
@@ -69,3 +72,6 @@ function sizesHTML(variation){
   })
   return sizesHTML;
 }
+};
+
+renderCartSummary();

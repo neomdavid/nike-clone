@@ -7,12 +7,12 @@ if (!cart){
     cartId: '1',
     quantity: 2,
     size: 7,
-    variationId: '1'
+    variationId: '1-1'
   }, {
     cartId: '2',
     quantity: 1,
     size: 8,
-    variationId: '2'
+    variationId: '1-2'
   }];
 }
 

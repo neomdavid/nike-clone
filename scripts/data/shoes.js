@@ -70,7 +70,7 @@ export function getShoeByVariationId(variationId){
   let matchedShoe;
 
   shoes.forEach((shoe)=>{
-    if(shoe.id === variationId){
+    if(shoe.id === variationId.split("-")[0]){
       matchedShoe = shoe;
     }
   });
