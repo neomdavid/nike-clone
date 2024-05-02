@@ -1,6 +1,7 @@
 import { getShoeByVariationId } from "../data/shoes.js";
 import { getVariationByVariationId } from "../data/variation.js";
 import { cart,removeFromCart} from "../data/cart.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 console.log(cart);
 export function renderCartSummary(){
@@ -69,6 +70,7 @@ document.querySelectorAll('.js-delete-icon').forEach((deleteElement)=>{
   deleteElement.addEventListener('click',()=>{
     removeFromCart(cartId);
     renderCartSummary();
+    renderPaymentSummary();
   })
 
 });

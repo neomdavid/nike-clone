@@ -2,6 +2,7 @@ import {getClickedVariation, variations, getDefaultVariation, getVariationByVari
 import { getShoeByVariation } from "./data/shoes.js";
 import { formatCurrency } from "./utils/formatCurrency.js";
 import { addToCart, cart} from "./data/cart.js";
+import { renderPaymentSummary } from "./cart/paymentSummary.js";
 
 let variation = getClickedVariation();
 let defaultVariation = getDefaultVariation(variation);
@@ -190,7 +191,6 @@ export function renderShoeDetails(){
     } else{
       console.log('add'+newVariation.variationId)
       addToCart(newVariation.variationId, clickedSize);
-  
       console.log(cart);
     }
   

@@ -1,6 +1,7 @@
 import { getShoeByVariationId } from "../data/shoes.js";
 import { getVariationByVariationId } from "../data/variation.js";
 import { cart } from "../data/cart.js";
+import { formatCurrency } from "../utils/formatCurrency.js";
 
 export function renderPaymentSummary(){
   let cartSummaryHTML = ``;
