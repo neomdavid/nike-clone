@@ -1,4 +1,5 @@
-export const shoes = [{
+export const shoes = [
+  {
   id: '1',
   name: "Nike Air Force 1 '07 LV8",
   description: 'Just In',
