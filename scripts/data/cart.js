@@ -57,6 +57,6 @@ export function removeFromCart(cartId){
 function saveToStorage(){
   localStorage.setItem('cart', JSON.stringify(cart));
 };
-function loadFromStorage(){
+export function loadFromStorage(){
   cart = JSON.parse(localStorage.getItem('cart'));
 }
