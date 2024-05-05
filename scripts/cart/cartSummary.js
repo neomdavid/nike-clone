@@ -3,7 +3,6 @@ import { getVariationByVariationId } from "../data/variation.js";
 import { cart,removeFromCart} from "../data/cart.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
-console.log(cart);
 export function renderCartSummary(){
   let cartHTML = ``;
   cart.forEach((cartItem)=>{
@@ -11,11 +10,9 @@ export function renderCartSummary(){
   const shoe = getShoeByVariationId(cartItem.variationId);
   
   const variation = getVariationByVariationId(cartItem.variationId);
+  
+  console.log('cartItem'+cartItem.variationId);
 
-  console.log(variation);
-  console.log(cartItem.variationId);
-
-    console.log(shoe);
   cartHTML+=`
     <div class="item-container">
       <div><img src="${variation.squareImage}"></div>

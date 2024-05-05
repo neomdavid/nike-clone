@@ -13,6 +13,5 @@ describe('test suite: addToCart',()=>{
     expect(cart.length).toEqual(1);
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     expect(localStorage.setItem).toHaveBeenCalledWith('cart', JSON.stringify(cart));
-  
   })
 });
