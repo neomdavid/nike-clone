@@ -2,7 +2,7 @@ import { renderCartSummary } from "../scripts/cart/cartSummary.js";
 import { loadFromStorage } from "../scripts/data/cart.js";
 
 describe('test suite: renderCartSummary', ()=>{
-  it('displays the cart', ()=>{
+  beforeEach(()=>{
     spyOn(localStorage, 'setItem');
 
     document.querySelector('.js-test-container').innerHTML=`
@@ -26,8 +26,23 @@ describe('test suite: renderCartSummary', ()=>{
     loadFromStorage();
 
     renderCartSummary();
-    console.log( document.querySelector('.js-test-container').innerHTML);
-    expect(document.querySelectorAll('.item-container').length).toEqual(2);
+  });
 
-  })
+  it('displays the cart', ()=>{
+    expect(
+      document.querySelectorAll('.item-container').length).toEqual(2);
+    expect(
+      document.querySelector('.js-item-container-1').innerText
+    ).toContain("Nike Air Force 1 '07 LV8");
+    expect(
+      document.querySelector('.js-item-container-1').innerText
+    ).toContain("Men's Shoes");
+    expect(localStorage.setItem).toHaveBeenCalledTimes(0);
+
+   
+  });
+
+  afterEach(()=>{
+    document.querySelector('.js-test-container').innerHTML=``;
+  });
 })

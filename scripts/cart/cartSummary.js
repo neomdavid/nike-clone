@@ -14,7 +14,7 @@ export function renderCartSummary(){
   console.log('cartItem'+cartItem.variationId);
 
   cartHTML+=`
-    <div class="item-container">
+    <div class="item-container js-item-container-${cartItem.cartId}">
       <div><img src="${variation.squareImage}"></div>
       <div class="item-details-container">
         <div class="shoe-name">${shoe.name}</div>
