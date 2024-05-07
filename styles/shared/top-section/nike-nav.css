@@ -93,3 +93,23 @@
     display: none;
   }
 }
+@media only screen and (max-width:987px){
+  .nike-nav-middle-container div:nth-last-child(4) {
+    display: none;
+  }
+}
+@media only screen and (max-width:924px){
+  .nike-nav-middle-container div:nth-last-child(5) {
+    display: none;
+  }
+}
+@media only screen and (max-width:856px){
+  .nike-nav-middle-container div:nth-last-child(6) {
+    display: none;
+  }
+}
+@media only screen and (max-width:795px){
+  .nike-nav-middle-container div:nth-last-child(7) {
+    display: none;
+  }
+}

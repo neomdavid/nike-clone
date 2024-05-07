@@ -5,6 +5,7 @@
   max-width: 67em;
   margin: 0 auto; 
   column-gap: 30px;
+  padding: 0 20px;
 }
 
 /*----------FIRST CONTAINER---------*/
@@ -138,3 +139,15 @@ select {
   cursor: pointer;
 }
 
+
+
+
+@media only screen and (max-width:950px){
+  .cart-grid{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 0 20px;
+  }
+  .
+}

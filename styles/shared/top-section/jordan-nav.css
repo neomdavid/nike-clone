@@ -30,3 +30,8 @@
  {
  border-right: solid 1px;
 }
+@media only screen and (max-width:960px){
+  .jordan-nav{
+    display: none;
+  }
+}
