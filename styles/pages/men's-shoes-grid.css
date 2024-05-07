@@ -15,6 +15,9 @@
   width: 100%;
   margin-bottom: 8px;
 }
+.shoe-details-container{
+  padding-left: 8px;
+}
 p{
   margin: 0;
 }
@@ -39,4 +42,52 @@ p{
 }
 .color-quantity{
   margin-bottom: 8px;
+}
+
+@media only screen and (max-width:960px){
+  .jordan-nav{
+    display: none;
+  }
+  .nav-left-and-shoes-grid-container{
+    display: flex;
+  }
+  .nav-left,
+  .wall-nav-left,
+  .jordan-nav,
+  .search-container{
+    display: none;
+  }
+  .menshoes-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0;
+    column-gap: 6px;
+  }
+  .nike-nav-middle-container{
+    display: none;
+  }
+  .wall-header .title{
+    font-size: 18px;
+  }
+  .wall-header{
+    padding-left: 17px;    padding-right: 17px;
+
+  }
+}
+
+@media only screen and (max-width: 776px){
+  .hide-filters-container{ 
+    display: none;
+  }
+}
+@media only screen and (max-width: 557px){
+  html, body{ 
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 406px){
+  body{ 
+    width: 100%;
+  }
 }

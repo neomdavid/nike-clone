@@ -1,6 +1,20 @@
 import {shoes} from './data/shoes.js';
 import { variations, updateClickedVariation, getVariationByShoeId} from './data/variation.js';
 import { formatCurrency } from './utils/formatCurrency.js';
+// Function to log the width of viewport width (vw) unit in pixels
+function logViewportWidthInPixels() {
+  // Get the current width of the viewport in vw
+  const vwWidth = window.innerWidth / 100;
+  
+  // Calculate the width in pixels
+  const widthInPixels = vwWidth * 100;
+
+  // Log the width in pixels
+  console.log('Viewport width in pixels:', widthInPixels);
+}
+
+// Call the function when the page loads or when needed
+logViewportWidthInPixels();
 
 let shoeSummaryHTML = ``;
 
