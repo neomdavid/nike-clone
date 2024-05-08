@@ -3,7 +3,7 @@ body{
 }
 .shoe-details-grid{
   display: grid;
-  grid-template-columns: 8.7em 1fr 32em;
+  grid-template-columns: 8.7em 1fr 28em;
   margin-left: auto; /* Adjust the left space */
   margin-right: auto; /* Adjust the right space */
   max-width: 1200px; /* Set a maximum width for the body */
@@ -34,6 +34,8 @@ body{
 .shoe-single-picture-container div{
   display: flex;
   align-items: top;
+  background-color: blue;
+
 }
 .shoe-single-picture-container img{
   border-radius: 3px;
@@ -46,11 +48,10 @@ body{
 .materials-size-container{
   display: flex;
   flex-direction: column;
-  margin-left: 55px;
   padding-right:50px;
-  padding-left: 35px;
   max-height: calc(100vh - 60px); /* Adjust height as needed */
   overflow-y: auto; 
+  padding-left: 35px;
 }
 .sustainable-materials{
   color: rgb(255, 80, 0);
@@ -229,4 +230,48 @@ body{
 
 .clicked{
   display: flex;
+}
+
+
+@media only screen and (max-width:1087px){
+  .shoe-details-grid{
+  display: flex;
+  flex-direction: column;
+}
+.shoe-single-picture-container img{
+  width: 100%;
+  max-height: 100%;
+  margin-bottom: 30px;
+  margin-top: 145px;
+}
+.shoe-gallery-container{
+  display: none;
+}
+.shoe-variants-container{
+  display: none;
+}
+.sustainable-materials,
+.shoe-name,
+.category,
+.price{
+  margin-left: -10px;
+}
+.sustainable-materials
+{
+  position: absolute;
+  top: 140px;
+}
+
+.shoe-name{
+  position: absolute;
+  top: 165px;
+}
+.category{
+  position: absolute;
+  top: 195px;
+}
+.price{
+  position: absolute;
+  top: 235px;
+}
 }
