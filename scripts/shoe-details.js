@@ -9,11 +9,16 @@ let defaultVariation = getDefaultVariation(variation);
 let clickedSize;
 let newVariation = defaultVariation;
 
+console.log(defaultVariation);
+
+
+
 renderShoeDetails();
+
 
 export function renderShoeDetails(){
   let galleryContainerHTML = ``;
-  console.log('variationId: '+newVariation.variationId);
+
 
   defaultVariation.images.forEach((imageSrc)=>{
     galleryContainerHTML+= `
@@ -23,6 +28,7 @@ export function renderShoeDetails(){
 
   document.querySelector('.js-shoe-gallery-container')
     .innerHTML = galleryContainerHTML;
+
 
   document.querySelector('.js-shoe-single-picture-container')
     .innerHTML = `
@@ -192,6 +198,7 @@ export function renderShoeDetails(){
       console.log('add'+newVariation.variationId)
       addToCart(newVariation.variationId, clickedSize);
       console.log(cart);
+      clickedSize = undefined;
     }
   
   })

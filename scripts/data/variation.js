@@ -96,17 +96,42 @@
     ],
     images: [
       '../../images/men-shoe/men-shoe-2.png',
-      '../../images/men-shoe/variations/men-shoe-1/2.png',
-      '../../images/men-shoe/variations/men-shoe-1/3.jpeg',
-      '../../images/men-shoe/variations/men-shoe-1/4.png',
-      '../../images/men-shoe/variations/men-shoe-1/5.png',
-      '../../images/men-shoe/variations/men-shoe-1/6.png',
-      '../../images/men-shoe/variations/men-shoe-1/7.png',
-      '../../images/men-shoe/variations/men-shoe-1/8.png',
-      '../../images/men-shoe/variations/men-shoe-1/9.png'
+      '../../images/men-shoe/variations/men-shoe-2/2-1/2.jpeg',
+      '../../images/men-shoe/variations/men-shoe-2/2-1/3.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-1/4.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-1/5.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-1/6.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-1/7.png'
     ],
-    singleImage:'../../images/men-shoe/variations/men-shoe-2/shoe-details-main.png',
-    styleCode: 'FN5832-100'
+    singleImage:'../../images/men-shoe/variations/men-shoe-2/2-1/shoe-details-main.png',
+    styleCode: 'FN5832-100',
+    squareImage: '../../images/men-shoe/variations/men-shoe-2/2-1/square-image.png'
+  }, {
+    id: '2',
+    variationId: '2-2',
+    sizes: [
+      { menSize:'5.5', womenSize: '7', stock: 12 },
+      { menSize:'6', womenSize: '7.5', stock: 12 },
+      { menSize:'6.5', womenSize: '8', stock: 12 },
+      { menSize:'7', womenSize: '8.5', stock: 12 },
+      { menSize:'7.5', womenSize: '9', stock: 12 },
+      { menSize:'8', womenSize: '9.5', stock: 12 },
+      { menSize:'8.5', womenSize: '10', stock: 12 },
+      { menSize:'9', womenSize: '10.5', stock: 12 },
+      { menSize:'9.5', womenSize: '11', stock: 12 },
+    ],
+    images: [
+      '../../images/men-shoe/variations/men-shoe-2/2-2/shoe-details-main.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/2.jpeg',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/3.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/4.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/5.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/6.png',
+      '../../images/men-shoe/variations/men-shoe-2/2-2/7.png'
+    ],
+    singleImage:'../../images/men-shoe/variations/men-shoe-2/2-2/shoe-details-main.png',
+    styleCode: 'FN5832-100',
+    squareImage: '../../images/men-shoe/variations/men-shoe-2/2-2/square-image.png'
   }];
 
   export let clickedVariation = '';
@@ -151,7 +176,7 @@
   }
 
   export function getDefaultVariation(variation) {
-    return variations.find((variationItem) => variationItem.variationId === variation.id + '-2');
+    return variations.find((variationItem) => variationItem.variationId === variation.id + '-1');
   }
 
 export function getVariationByVariationId(variaitonId){
